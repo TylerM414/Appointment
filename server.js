@@ -3,6 +3,7 @@ const app = express()
 const expressLayouts = require('express-ejs-layouts')
 const indexRouter = require('./routes/index')
 const authorRouter = require('./routes/authors')
+const bookRouter = require('./routes/books')
 const bodyParser = require('body-parser')
 const DB_URL = ('mongodb+srv://dbTylerM:yh5MsVCeQq9Md3Df@appointment-pljpa.mongodb.net/test?retryWrites=true&w=majority')
 
@@ -28,5 +29,6 @@ mongoose.connect( DB_URL, {
 
 app.use('/', indexRouter)
 app.use('/authors', authorRouter)
+//app.use('/books', bookRouter)
 
 app.listen(process.env.PORT || 3000)
