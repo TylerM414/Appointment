@@ -8,12 +8,12 @@
 <br>
 <div>
 <% authors.forEach(author => { %>
-  <div><%= author.name %></div>  
-<% }) %>
-<% authors.forEach(author => { %>
-    <div><%= author.publishDate %></div>  
-<% }) %>
-<% authors.forEach(author => { %>
-    <div><%= author.description %></div>  
+  <div><%= author.name %></div>
+  <div><%= author.publishDate %></div> 
+  <div><%= author.description %></div>
+  <a href="/authors/<%= author.id %>">View</a>  
+  <a href="/authors/<%= author.id %>/edit">Edit</a>  
+  <%- include('../partials/deleteForm', 
+            {url: `/authors/${author.id}` }) %>
 <% }) %>
 </div>
