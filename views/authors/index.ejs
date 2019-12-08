@@ -1,4 +1,4 @@
-<h2>Search Appointment</h2>
+<h2 class="page-header">Search Appointment</h2>
 <form action="/authors" method="GET">
     <label>Name</label>
 
@@ -11,9 +11,11 @@
   <div><%= author.name %></div>
   <div><%= author.publishDate %></div> 
   <div><%= author.description %></div>
-  <a href="/authors/<%= author.id %>">View</a>  
-  <a href="/authors/<%= author.id %>/edit">Edit</a>  
-  <%- include('../partials/deleteForm', 
-            {url: `/authors/${author.id}` }) %>
+  <div class="btn-row"> 
+    <a class="btn btn-primary" href="/authors/<%= author.id %>">View</a>  
+    <a class="btn btn-primary"  href="/authors/<%= author.id %>/edit">Edit</a>  
+    <%- include('../partials/deleteForm', 
+              {url: `/authors/${author.id}` }) %>
+  </div>
 <% }) %>
 </div>
