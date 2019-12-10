@@ -1,0 +1,6 @@
+<h2 class="page-header">
+    <%= appointment.name %>
+</h2>
+<a href="/appointments/<%= appointment.id%>/edit">Edit</a>
+<%- include('../partials/deleteForm', 
+        {url: `/appointments/${appointment.id}` })%>

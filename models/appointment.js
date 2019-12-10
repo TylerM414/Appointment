@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const authorSchema = new mongoose.Schema({
+const appointmentSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -16,4 +16,4 @@ const authorSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Author', authorSchema)
+module.exports = mongoose.model('Appointment', appointmentSchema)

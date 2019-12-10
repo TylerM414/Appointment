@@ -1,0 +1,21 @@
+<h2 class="page-header">Search Appointment</h2>
+<form action="/appointments" method="GET">
+    <label>Name</label>
+
+    <input type="text" name="name" value="<%= searchOptions.name %>">
+    <button type="submit">Search</button>
+</form>
+<br>
+<div>
+<% appointments.forEach(appointment => { %>
+  <div><%= appointment.name %></div>
+  <div><%= appointment.publishDate %></div> 
+  <div><%= appointment.description %></div>
+  <div class="btn-row"> 
+    <a class="btn btn-primary" href="/appointments/<%= appointment.id %>">View</a>  
+    <a class="btn btn-primary"  href="/appointments/<%= appointment.id %>/edit">Edit</a>  
+    <%- include('../partials/deleteForm', 
+              {url: `/appointments/${appointment.id}` }) %>
+  </div>
+<% }) %>
+</div>
