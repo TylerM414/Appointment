@@ -1,14 +1,18 @@
-<label>Name</label>
-<div>
-    <input type="text" name="name" value="<%= appointment.name %>">
-</div>
-<div>
-    <label>Appointment Date</label>
-    <input type="date" name="publishDate" 
+<div class="form_row">
+    <div class="form_item">
+        <label>Name</label>
+            <input type="text" name="name" value="<%= appointment.name %>">
+    </div>
+    <div class="form_item">
+        <label>Appointment Date</label>
+            <input type="date" name="publishDate" 
                 value="<%= appointment.publishDate == null ? '' : 
                 appointment.publishDate.toISOString().split('T')[0] %>">
+    </div>
 </div>
-<div>
-    <label>Description</label>
-    <textarea name="description"><%= appointment.description %></textarea>
+<div class="form_row"> 
+    <div class="form_item">
+        <label>Description</label>
+        <textarea name="description"><%= appointment.description %></textarea>
+    </div>
 </div>
